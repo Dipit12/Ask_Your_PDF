@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Questions from PDF</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      max-width: 600px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+    .btn-primary {
+      width: 100%;
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+    .results {
+      margin-top: 20px;
+    }
+    .results h3 {
+      font-size: 1.5rem;
+    }
+    .results p {
+      font-size: 1.2rem;
+      background-color: #e9ecef;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Ask Questions from PDF</h1>
+    <form method="post">
+      <div class="form-group">
+        <label for="question">Enter your question</label>
+        <input type="text" class="form-control" id="question" name="question" placeholder="Enter your question" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Ask</button>
+    </form>
+
+    {% if question and answer %}
+      <div class="results mt-4">
+        <h3>Results for: {{ question }}</h3>
+        <p><strong>Answer:</strong> {{ answer }}</p>
+      </div>
+    {% endif %}
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
